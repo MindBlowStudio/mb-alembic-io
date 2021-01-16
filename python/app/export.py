@@ -125,13 +125,13 @@ else:
     print('-------------------------------------------------------------------------------------------------------\n\n')
     alembicArgs = ' '.join(alembicArgs)
     processed = 'wait'
-    zsAlembicAata = {}
+    mbAlembicAata = {}
 
     for item in roots:
         explodeName = item['object'].split(':')
         itemName = explodeName[0].split(":")[0].split("_")[0]
         masterGroup = explodeName[1]
-        zsAlembicAata[itemName] = []
+        mbAlembicAata[itemName] = []
     try:
         i = 0
         for root in roots:
@@ -160,7 +160,7 @@ else:
                     roots[i]['processed'] = True
                     processed = 'success'
                     logger.info(' EXPORTING {0}{1}'.format(projectId, taskName.upper()))
-                    zsAlembicAata[taskName].append({"id": str('{0}{1}{2}'.format(projectId, taskName, i)),
+                    mbAlembicAata[taskName].append({"id": str('{0}{1}{2}'.format(projectId, taskName, i)),
                                                     "filename": str('{0}{1}{2}.abc'.format(projectId, taskName, i)),
                                                     "shot": shot['code'],
                                                     "sc": shot['sg_sequence']['name'],
@@ -182,6 +182,6 @@ else:
         print(e)
         processed = 'error'
     print('UPDATING {0} SHOTGUN SERVER'.format(shot['code']))
-    sg.update('Shot', shot['id'], {'sg_exported': 'False', 'sg_processed': processed, 'sg_root': json.dumps(roots), 'sg_zs_alembic_data': json.dumps(zsAlembicAata)})
+    sg.update('Shot', shot['id'], {'sg_exported': 'False', 'sg_processed': processed, 'sg_root': json.dumps(roots), 'sg_mb_alembic_data': json.dumps(mbAlembicAata)})
     print(' * Success')
 time.sleep(3)

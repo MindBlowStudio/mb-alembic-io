@@ -1,8 +1,8 @@
 configuration:
 supported_engines:
 requires_shotgun_fields:
-display_name: "Zombie Alembic IO"
-description: "Zombie Alembic IO"
+display_name: "MB Alembic IO"
+description: "Mind Blow Alembic IO"
 requires_shotgun_version:
 requires_core_version: "v0.14.28"
 requires_engine_version:

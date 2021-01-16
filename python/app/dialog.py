@@ -11,7 +11,7 @@ logger = sgtk.platform.get_logger(__name__)
 
 
 def show_dialog(app_instance):
-    app_instance.engine.show_dialog('ZS Alembic IO', app_instance, AppDialog)
+    app_instance.engine.show_dialog('MB Alembic IO', app_instance, AppDialog)
 
 
 class AppDialog(QtGui.QWidget):
