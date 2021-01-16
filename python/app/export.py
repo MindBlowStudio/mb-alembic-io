@@ -17,7 +17,7 @@ locale = str(sys.argv[4])
 print('-------------------------------------------------------------------------------------------------------')
 print(' CONNETING SHOTGUN API PLEASE WAIT...')
 print('-------------------------------------------------------------------------------------------------------')
-sg = shotgun_api3.Shotgun("https://zombiestudio.shotgunstudio.com", login="thiago.silva", password="Zombie@2020")
+sg = shotgun_api3.Shotgun("https://mindblow.shotgunstudio.com/", login="support", password="@Brain123")
 print(' -->CONNECTED')
 shot = sg.find_one("Shot", filters=[
     ["project.Project.id", "is", project_id],
